@@ -23,7 +23,6 @@
         state: latest
 
 
----
 - name: Setup Directory, File, and Change Timezone
   hosts: webservers, nfs, db
   become: yes
@@ -44,8 +43,6 @@
         name: Europe/London
 
 
-
----
 - name: Setup Directory, File, and Change Timezone for LB
   hosts: lb
   become: yes
