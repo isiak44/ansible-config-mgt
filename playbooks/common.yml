@@ -21,3 +21,46 @@
       apt:
         name: wireshark
         state: latest
+
+
+---
+- name: Setup Directory, File, and Change Timezone
+  hosts: webservers, nfs, db
+  become: yes
+
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/ec2-user/testdirectory
+        state: directory
+
+    - name: Create File
+      file:
+        path: /home/ec2-user/testdirectory/test.txt
+        state: touch
+
+    - name: Change Timezone
+      timezone:
+        name: Europe/London
+
+
+
+---
+- name: Setup Directory, File, and Change Timezone for LB
+  hosts: lb
+  become: yes
+
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/ubuntu/testdirectory
+        state: directory
+
+    - name: Create File
+      file:
+        path: /home/ubuntu/testdirectory/test.txt
+        state: touch
+
+    - name: Change Timezone
+      timezone:
+        name: Europe/London
