@@ -3,4 +3,4 @@ This repository is for jenkins and ansible project.
 
 We will experience the power of automation by using ansible to simplify complex task and streamlining IT infrastructure.  
 
-Testing copy artifact plugin with save artifact job
+
