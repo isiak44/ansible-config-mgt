@@ -1,4 +1,4 @@
-```---
+---
 - name: collate variables from env specific file, if it exists
   hosts: all
   tasks:
@@ -14,4 +14,3 @@
             - "{{ playbook_dir }}/../env-vars"
       tags:
         - always
-```
